@@ -55,6 +55,8 @@ docker compose up --build
 静态版源码位于 `docs/`，适合展示平台 UI，也支持连接真实 API。
 
 建议在 GitHub 仓库设置中将 Pages Source 设为 `GitHub Actions`。
+如果当前第一次启用 Pages，请到：
+`Settings -> Pages -> Build and deployment -> Source -> GitHub Actions`
 
 如果静态站要连接云端后端，请在后端环境变量中配置 `CORS_ORIGINS`。
 
