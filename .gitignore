@@ -1,15 +1,1 @@
-.pytest_cache/
-.venv/
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.sqlite3
-*.db
-*.egg-info/
-coverage.xml
-htmlcov/
 .DS_Store
-data/
-generated/
-.generated-tests/

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>持仓 | 6.py 金融平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body data-protected="true">
+    <main class="page">
+      <header class="topbar">
+        <a class="brand" data-route="/" href="../">
+          <span class="brand-mark">6P</span>
+          <span class="brand-copy">
+            <strong>金融平台 Web</strong>
+            <span>持仓页</span>
+          </span>
+        </a>
+        <nav class="nav">
+          <a data-route="/quotes/" href="../quotes/">行情</a>
+          <a data-route="/portfolio/" href="./">持仓</a>
+          <a data-route="/trade/" href="../trade/">交易</a>
+          <a data-route="/transfer/" href="../transfer/">转账</a>
+        </nav>
+      </header>
+
+      <section class="banner">
+        <div>
+          <strong>账户总资产 <span id="portfolioTotal">-</span></strong>
+          <div class="meta-line">用户名：<span data-session-user>访客模式</span></div>
+        </div>
+        <button class="btn btn-ghost" data-action="logout" hidden>退出登录</button>
+      </section>
+
+      <section class="grid-2">
+        <article class="card">
+          <div class="section-head">
+            <div class="section-title">
+              <p class="kicker">/portfolio/</p>
+              <h1>资产持仓</h1>
+              <p>股票、基金、现金管理统一归集展示。</p>
+            </div>
+          </div>
+          <div class="holdings-grid" id="holdingsGrid"></div>
+        </article>
+
+        <aside class="card">
+          <div class="section-head">
+            <div class="section-title">
+              <p class="kicker">Allocation</p>
+              <h2>仓位分布</h2>
+            </div>
+          </div>
+          <div class="stack" id="allocationList"></div>
+        </aside>
+      </section>
+    </main>
+    <script src="../assets/app.js"></script>
+  </body>
+</html>

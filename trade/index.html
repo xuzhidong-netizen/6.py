@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>交易 | 6.py 金融平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body data-protected="true">
+    <main class="page">
+      <header class="topbar">
+        <a class="brand" data-route="/" href="../">
+          <span class="brand-mark">6P</span>
+          <span class="brand-copy">
+            <strong>金融平台 Web</strong>
+            <span>交易页</span>
+          </span>
+        </a>
+        <nav class="nav">
+          <a data-route="/quotes/" href="../quotes/">行情</a>
+          <a data-route="/portfolio/" href="../portfolio/">持仓</a>
+          <a data-route="/trade/" href="./">交易</a>
+          <a data-route="/statements/" href="../statements/">账单</a>
+        </nav>
+      </header>
+
+      <section class="banner">
+        <div>
+          <strong>当前交易员 <span data-session-user>访客模式</span></strong>
+          <div class="meta-line">委托路径：`/trade/`</div>
+        </div>
+        <button class="btn btn-ghost" data-action="logout" hidden>退出登录</button>
+      </section>
+
+      <section class="grid-2">
+        <article class="card">
+          <div class="section-head">
+            <div class="section-title">
+              <p class="kicker">/trade/</p>
+              <h1>委托录入</h1>
+              <p>模拟买卖委托，计算成交额与费用预估。</p>
+            </div>
+          </div>
+
+          <form id="tradeForm" class="stack">
+            <div class="field-grid">
+              <label>
+                <strong>交易方向</strong>
+                <select name="side">
+                  <option value="BUY">买入</option>
+                  <option value="SELL">卖出</option>
+                </select>
+              </label>
+              <label>
+                <strong>证券代码</strong>
+                <input name="symbol" value="600519" required />
+              </label>
+            </div>
+            <div class="field-grid">
+              <label>
+                <strong>委托数量</strong>
+                <input name="quantity" type="number" min="100" step="100" value="100" required />
+              </label>
+              <label>
+                <strong>委托价格</strong>
+                <input name="price" type="number" min="0.01" step="0.01" value="1688.20" required />
+              </label>
+            </div>
+            <button class="btn btn-primary" type="submit">提交演示委托</button>
+          </form>
+        </article>
+
+        <aside class="card">
+          <div class="section-head">
+            <div class="section-title">
+              <p class="kicker">Preview</p>
+              <h2>订单预览</h2>
+            </div>
+          </div>
+          <div class="preview-box" id="tradePreview"></div>
+          <div class="section-head" style="margin-top: 18px">
+            <div class="section-title">
+              <p class="kicker">History</p>
+              <h2>最近委托</h2>
+            </div>
+          </div>
+          <div class="timeline" id="orderHistory"></div>
+        </aside>
+      </section>
+    </main>
+    <script src="../assets/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>行情 | 6.py 金融平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body data-protected="true">
+    <main class="page">
+      <header class="topbar">
+        <a class="brand" data-route="/" href="../">
+          <span class="brand-mark">6P</span>
+          <span class="brand-copy">
+            <strong>金融平台 Web</strong>
+            <span>行情页</span>
+          </span>
+        </a>
+        <nav class="nav">
+          <a data-route="/quotes/" href="./">行情</a>
+          <a data-route="/portfolio/" href="../portfolio/">持仓</a>
+          <a data-route="/trade/" href="../trade/">交易</a>
+          <a data-route="/statements/" href="../statements/">账单</a>
+        </nav>
+      </header>
+
+      <section class="banner">
+        <div>
+          <strong data-session-user>访客模式</strong>
+          <div class="meta-line">行情访问时间 <span id="marketClock"></span></div>
+        </div>
+        <button class="btn btn-ghost" data-action="logout" hidden>退出登录</button>
+      </section>
+
+      <section class="stats-strip">
+        <article class="metric">
+          <span>上证指数</span>
+          <strong>3,216.48</strong>
+        </article>
+        <article class="metric">
+          <span>深证成指</span>
+          <strong>10,842.19</strong>
+        </article>
+        <article class="metric">
+          <span>创业板指</span>
+          <strong>2,142.77</strong>
+        </article>
+        <article class="metric">
+          <span>市场脉冲</span>
+          <strong class="positive">偏强</strong>
+        </article>
+      </section>
+
+      <section class="card" style="margin-top: 18px">
+        <div class="section-head">
+          <div class="section-title">
+            <p class="kicker">/quotes/</p>
+            <h1>自选行情</h1>
+            <p>演示多标的报价、涨跌幅、成交额和成交量。</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>代码</th>
+                <th>最新价</th>
+                <th>涨跌幅</th>
+                <th>成交额</th>
+                <th>成交量</th>
+              </tr>
+            </thead>
+            <tbody id="quotesBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="../assets/app.js"></script>
+  </body>
+</html>

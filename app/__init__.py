@@ -1,1 +1,0 @@
-"""Automation testing platform package."""

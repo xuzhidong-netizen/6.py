@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>登录 | 6.py 金融平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <a class="brand" data-route="/" href="../">
+          <span class="brand-mark">6P</span>
+          <span class="brand-copy">
+            <strong>金融平台 Web</strong>
+            <span>登录页</span>
+          </span>
+        </a>
+        <nav class="nav">
+          <a data-route="/login/" href="./">登录</a>
+          <a data-route="/quotes/" href="../quotes/">行情</a>
+          <a data-route="/portfolio/" href="../portfolio/">持仓</a>
+        </nav>
+      </header>
+
+      <section class="grid-2">
+        <article class="card">
+          <div class="section-head">
+            <div class="section-title">
+              <p class="kicker">/login/</p>
+              <h1>交易会话登录</h1>
+              <p>提交后会写入本地演示会话，并跳转到受保护页面。</p>
+            </div>
+            <span class="session-pill">状态 <strong data-login-entry>去登录</strong></span>
+          </div>
+
+          <form id="loginForm" class="stack">
+            <label>
+              <strong>登录账号</strong>
+              <input name="username" value="demo.trader" required />
+            </label>
+            <label>
+              <strong>登录密码</strong>
+              <input name="password" type="password" value="Pass@2026" required />
+            </label>
+            <div class="field-grid">
+              <label>
+                <strong>图形验证码</strong>
+                <input name="captcha" value="6308" required />
+              </label>
+              <label>
+                <strong>短信口令</strong>
+                <input name="otp" value="938271" required />
+              </label>
+            </div>
+            <div class="button-row">
+              <button class="btn btn-primary" type="submit">登录并进入行情页</button>
+              <a class="btn btn-secondary" data-route="/" href="../">返回首页</a>
+            </div>
+          </form>
+        </article>
+
+        <aside class="card">
+          <div class="section-head">
+            <div class="section-title">
+              <p class="kicker">Session</p>
+              <h2>当前会话</h2>
+            </div>
+          </div>
+          <div class="detail-list">
+            <div class="detail-item">
+              <div>
+                <strong data-session-user>访客模式</strong>
+                <div class="meta-line">最近登录用户</div>
+              </div>
+            </div>
+            <div class="detail-item">
+              <div>
+                <strong data-session-time>未登录</strong>
+                <div class="meta-line">登录时间</div>
+              </div>
+            </div>
+            <div class="panel-note">
+              <strong>演示说明</strong>
+              <p>这是静态金融前端示例，登录只保存在浏览器本地，不会访问真实后端。</p>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+    <script src="../assets/app.js"></script>
+  </body>
+</html>

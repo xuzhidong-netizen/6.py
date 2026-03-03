@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>6.py 金融平台 Web 端</title>
+    <meta
+      name="description"
+      content="多页面金融平台前端示例，包含登录、行情、持仓、交易、转账、账单路径。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <a class="brand" data-route="/" href="./">
+          <span class="brand-mark">6P</span>
+          <span class="brand-copy">
+            <strong>金融平台 Web</strong>
+            <span>Multi-page front-end demo</span>
+          </span>
+        </a>
+        <nav class="nav">
+          <a data-route="/login/" href="./login/">登录</a>
+          <a data-route="/quotes/" href="./quotes/">行情</a>
+          <a data-route="/portfolio/" href="./portfolio/">持仓</a>
+          <a data-route="/trade/" href="./trade/">交易</a>
+          <a data-route="/transfer/" href="./transfer/">转账</a>
+          <a data-route="/statements/" href="./statements/">账单</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Financial Web Frontend</p>
+            <h1 class="hero-title">把登录、行情、持仓、交易、转账、账单直接落成可访问路径。</h1>
+            <p class="hero-copy">
+              这是 `6.py` 的独立金融项目 Web 端。它不是后台管理台，而是一套可以直接发布到 GitHub Pages
+              的静态多页面前端，每个关键金融场景都对应实际页面路径。
+            </p>
+            <div class="hero-actions" style="margin-top: 20px">
+              <a class="btn btn-primary" data-route="/login/" href="./login/">进入登录页</a>
+              <a class="btn btn-secondary" data-route="/quotes/" href="./quotes/">查看行情页</a>
+            </div>
+          </div>
+
+          <aside class="hero-panel">
+            <div class="hero-list">
+              <div class="hero-list-item">
+                <div>
+                  <strong>已配路径</strong>
+                  <div class="meta-line">覆盖 6 个核心金融页面</div>
+                </div>
+                <span class="chip">/login ~ /statements</span>
+              </div>
+              <div class="hero-list-item">
+                <div>
+                  <strong>部署方式</strong>
+                  <div class="meta-line">推送 `main` 自动发布到 Pages</div>
+                </div>
+                <span class="chip">GitHub Actions</span>
+              </div>
+              <div class="hero-list-item">
+                <div>
+                  <strong>状态</strong>
+                  <div class="meta-line">静态可运行，无需构建链</div>
+                </div>
+                <span class="chip">Zero Build</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="metrics" style="margin-top: 18px">
+        <article class="metric">
+          <span>页面数量</span>
+          <strong>6</strong>
+        </article>
+        <article class="metric">
+          <span>账户总资产</span>
+          <strong>¥302.8万</strong>
+        </article>
+        <article class="metric">
+          <span>自选标的</span>
+          <strong>24</strong>
+        </article>
+      </section>
+
+      <section class="route-grid" style="margin-top: 18px">
+        <article class="route-card">
+          <span class="path-tag">/login/</span>
+          <h3>登录</h3>
+          <p>账户、密码和验证码录入，进入交易会话。</p>
+          <div class="button-row">
+            <a class="btn btn-ghost" data-route="/login/" href="./login/">打开页面</a>
+          </div>
+        </article>
+        <article class="route-card">
+          <span class="path-tag">/quotes/</span>
+          <h3>行情</h3>
+          <p>展示自选行情、涨跌幅、成交额和市场脉冲。</p>
+          <div class="button-row">
+            <a class="btn btn-ghost" data-route="/quotes/" href="./quotes/">打开页面</a>
+          </div>
+        </article>
+        <article class="route-card">
+          <span class="path-tag">/portfolio/</span>
+          <h3>持仓</h3>
+          <p>聚合账户资产、仓位分布和收益快照。</p>
+          <div class="button-row">
+            <a class="btn btn-ghost" data-route="/portfolio/" href="./portfolio/">打开页面</a>
+          </div>
+        </article>
+        <article class="route-card">
+          <span class="path-tag">/trade/</span>
+          <h3>交易</h3>
+          <p>录入买卖委托、实时计算成交额和费用预估。</p>
+          <div class="button-row">
+            <a class="btn btn-ghost" data-route="/trade/" href="./trade/">打开页面</a>
+          </div>
+        </article>
+        <article class="route-card">
+          <span class="path-tag">/transfer/</span>
+          <h3>转账</h3>
+          <p>银证与资金账户划转，生成回执和流水号。</p>
+          <div class="button-row">
+            <a class="btn btn-ghost" data-route="/transfer/" href="./transfer/">打开页面</a>
+          </div>
+        </article>
+        <article class="route-card">
+          <span class="path-tag">/statements/</span>
+          <h3>账单</h3>
+          <p>月度账单、收益变化和资金流水一屏呈现。</p>
+          <div class="button-row">
+            <a class="btn btn-ghost" data-route="/statements/" href="./statements/">打开页面</a>
+          </div>
+        </article>
+      </section>
+
+      <p class="footer-note">GitHub Pages 发布地址：`/6.py/`，所有页面路径都会自动带上仓库前缀。</p>
+    </main>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>

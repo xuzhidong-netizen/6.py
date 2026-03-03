@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>账单 | 6.py 金融平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body data-protected="true">
+    <main class="page">
+      <header class="topbar">
+        <a class="brand" data-route="/" href="../">
+          <span class="brand-mark">6P</span>
+          <span class="brand-copy">
+            <strong>金融平台 Web</strong>
+            <span>账单页</span>
+          </span>
+        </a>
+        <nav class="nav">
+          <a data-route="/quotes/" href="../quotes/">行情</a>
+          <a data-route="/portfolio/" href="../portfolio/">持仓</a>
+          <a data-route="/transfer/" href="../transfer/">转账</a>
+          <a data-route="/statements/" href="./">账单</a>
+        </nav>
+      </header>
+
+      <section class="banner">
+        <div>
+          <strong>账单中心</strong>
+          <div class="meta-line">最近登录：<span data-session-time>未登录</span></div>
+        </div>
+        <button class="btn btn-ghost" data-action="logout" hidden>退出登录</button>
+      </section>
+
+      <section class="grid-2">
+        <article class="card">
+          <div class="section-head">
+            <div class="section-title">
+              <p class="kicker">/statements/</p>
+              <h1>月度账单</h1>
+              <p>展示月度资产快照、收益变化和状态。</p>
+            </div>
+          </div>
+          <div class="statement-list" id="statementList"></div>
+        </article>
+
+        <aside class="card">
+          <div class="section-head">
+            <div class="section-title">
+              <p class="kicker">Cash Flow</p>
+              <h2>当日流水</h2>
+            </div>
+          </div>
+          <div class="timeline" id="flowList"></div>
+        </aside>
+      </section>
+    </main>
+    <script src="../assets/app.js"></script>
+  </body>
+</html>

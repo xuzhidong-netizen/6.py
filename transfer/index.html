@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>转账 | 6.py 金融平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body data-protected="true">
+    <main class="page">
+      <header class="topbar">
+        <a class="brand" data-route="/" href="../">
+          <span class="brand-mark">6P</span>
+          <span class="brand-copy">
+            <strong>金融平台 Web</strong>
+            <span>转账页</span>
+          </span>
+        </a>
+        <nav class="nav">
+          <a data-route="/portfolio/" href="../portfolio/">持仓</a>
+          <a data-route="/trade/" href="../trade/">交易</a>
+          <a data-route="/transfer/" href="./">转账</a>
+          <a data-route="/statements/" href="../statements/">账单</a>
+        </nav>
+      </header>
+
+      <section class="banner">
+        <div>
+          <strong>资金划转通道已开启</strong>
+          <div class="meta-line">当前用户：<span data-session-user>访客模式</span></div>
+        </div>
+        <button class="btn btn-ghost" data-action="logout" hidden>退出登录</button>
+      </section>
+
+      <section class="grid-2">
+        <article class="card">
+          <div class="section-head">
+            <div class="section-title">
+              <p class="kicker">/transfer/</p>
+              <h1>账户划转</h1>
+              <p>在银行卡、资金账户和证券账户之间创建调拨。</p>
+            </div>
+          </div>
+
+          <div class="dual-grid" style="margin-bottom: 18px">
+            <div class="account-card">
+              <span class="chip">银行卡</span>
+              <strong>¥1,480,000</strong>
+              <div class="meta-line">招商银行尾号 8832</div>
+            </div>
+            <div class="account-card">
+              <span class="chip">证券资金账户</span>
+              <strong>¥486,200</strong>
+              <div class="meta-line">沪A 001-884-90</div>
+            </div>
+          </div>
+
+          <form id="transferForm" class="stack">
+            <div class="field-grid">
+              <label>
+                <strong>转出账户</strong>
+                <select name="from">
+                  <option>银行卡</option>
+                  <option>证券资金账户</option>
+                </select>
+              </label>
+              <label>
+                <strong>转入账户</strong>
+                <select name="to">
+                  <option>证券资金账户</option>
+                  <option>银行卡</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              <strong>金额</strong>
+              <input name="amount" type="number" min="1" step="1000" value="50000" required />
+            </label>
+            <label>
+              <strong>备注</strong>
+              <input name="remark" value="日内资金调拨" />
+            </label>
+            <button class="btn btn-primary" type="submit">生成划转回执</button>
+          </form>
+        </article>
+
+        <aside class="card">
+          <div class="section-head">
+            <div class="section-title">
+              <p class="kicker">Receipt</p>
+              <h2>回执</h2>
+            </div>
+          </div>
+          <div class="receipt-box" id="transferReceipt">
+            <strong>等待提交</strong>
+            <div class="meta-line">填写左侧表单后，这里会生成划转流水信息。</div>
+          </div>
+        </aside>
+      </section>
+    </main>
+    <script src="../assets/app.js"></script>
+  </body>
+</html>
